@@ -1,3 +1,12 @@
+body{
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+.nav-item{
+  text-decoration:none;
+  color:black;
+  margin: 9px;
+}
 .App {
   text-align: center;
 }
