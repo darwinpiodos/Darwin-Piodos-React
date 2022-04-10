@@ -5,6 +5,7 @@ import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
 import Login from './Login';
 import Register from './Register';
+import Protected from './Protected';
 
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
       <div>
       
         <Router>
-        <Header/>
+        
             <Switch>
             <Route exact path='/' component={App}></Route>
-              <Route path='/add' component={AddProduct}></Route>
-              <Route path='/update' component={UpdateProduct}></Route>
+              <Route path='/add' ><Protected Cmp={AddProduct} /></Route>
+              <Route path='/update' ><Protected Cmp={UpdateProduct} /></Route>
               <Route path='/login' component={Login}></Route>
               <Route path='/register' component={Register}></Route>
             </Switch>

@@ -14,18 +14,29 @@ function Header()
                            
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <Link to="/add" className="nav-item">Add Products</Link>
-                                    </li>
-                                    <li class="nav-item">
-                                        <Link to="/update" className="nav-item">Update Products</Link>
-                                    </li>
-                                    <li class="nav-item">
-                                        <Link to="/login" className="nav-item">Login</Link>
-                                    </li>
-                                    <li class="nav-item">
-                                        <Link to="/register" className="nav-item ">Register</Link>
-                                    </li>
+
+                                    {
+                                        localStorage.getItem('user-info') ?
+                                        <>
+                                            <li class="nav-item">
+                                                <Link to="/add" className="nav-item">Add Products</Link>
+                                            </li>
+                                            <li class="nav-item">
+                                                <Link to="/update" className="nav-item">Update Products</Link>
+                                            </li>
+                                        </>
+                                        :
+                                        <>
+                                            <li class="nav-item">
+                                                <Link to="/login" className="nav-item">Login</Link>
+                                            </li>
+                                            <li class="nav-item">
+                                                <Link to="/register" className="nav-item ">Register</Link>
+                                            </li>
+                                        </>
+
+                                    }   
+                                   
                                 </ul>
                             </div>
                         </div>
