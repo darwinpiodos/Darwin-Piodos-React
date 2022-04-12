@@ -1,8 +1,27 @@
-import{Link} from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import{Link, useHistory} from 'react-router-dom';
 import './App.css';
 
 function Header()
 {
+
+
+    let user= JSON.parse(localStorage.getItem('user-info'))
+    const history=useHistory();
+
+    function logOut()
+    {
+        localStorage.clear();
+        history.push('/register')
+    }
+
+    function profile()
+    {
+      
+        history.push('/add')
+    }
+
+     
     return(
         <div className="container-fluid p-0">
             <div className="row">
@@ -36,11 +55,32 @@ function Header()
                                         </>
 
                                     }   
-                                   
+                                  
                                 </ul>
                             </div>
                         </div>
+
+                        {localStorage.getItem('user-info') ?    
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span>{user &&  user.name}</span>
+                            </button>
+                            <ul class="dropdown-menu"              aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#" onClick={logOut}>Logout</a></li>
+                                <li><a class="dropdown-item" href="#" onClick={profile}>Profile</a></li>
+                              
+                              
+                            </ul>
+                        </div>
+
+                        :null   
+
+                                }
+
+
                     </nav>
+
+
                 </div>
             </div>
         </div>

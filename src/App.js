@@ -17,10 +17,12 @@ function App() {
         
             <Switch>
             <Route exact path='/' component={App}></Route>
-              <Route path='/add' ><Protected Cmp={AddProduct} /></Route>
-              <Route path='/update' ><Protected Cmp={UpdateProduct} /></Route>
-              <Route path='/login' component={Login}></Route>
-              <Route path='/register' component={Register}></Route>
+            <Route path='/add' ><Protected Cmp={AddProduct} /></Route>
+            <Route path='/update' ><Protected Cmp={UpdateProduct} /></Route>
+            <Route path='/login' component={Login}></Route>
+            <Route path='/register' component={Register}></Route> 
+      
+           
             </Switch>
         </Router>
 
