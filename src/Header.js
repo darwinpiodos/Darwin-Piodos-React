@@ -23,7 +23,7 @@ function Header()
 
      
     return(
-        <div className="container-fluid p-0">
+        <div className="container-fluid p-0 w-100">
             <div className="row">
                 <div className="col">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,6 +37,10 @@ function Header()
                                     {
                                         localStorage.getItem('user-info') ?
                                         <>
+
+                                            <li class="nav-item">
+                                                <Link to="/" className="nav-item">Product List </Link>
+                                            </li>
                                             <li class="nav-item">
                                                 <Link to="/add" className="nav-item">Add Products</Link>
                                             </li>
